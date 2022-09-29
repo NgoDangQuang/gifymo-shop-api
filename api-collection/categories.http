@@ -1,0 +1,145 @@
+@baseUrl = http://localhost:3000/api
+@resourceName = products
+
+# Categories 
+
+# @name getAll
+GET {{baseUrl}}/{{resourceName}}
+
+### 
+# @name filterProducts
+GET {{baseUrl}}/{{resourceName}}?price_gte=600
+
+
+###
+# @name pagination
+GET {{baseUrl}}/{{resourceName}}?_page=1&_limit=20
+
+
+###
+# @name sort
+GET {{baseUrl}}/{{resourceName}}?_sort=price&_order=desc
+
+
+###
+# @name addNew
+POST {{baseUrl}}/{{resourceName}}
+Content-Type: application/json
+
+{
+    "name": "Hallmark Stuffed Snoopy New",
+    "price": 132,
+    "discounts": 91,
+    "image": [
+      "http://demo2.themelexus.com/gifymo/wp-content/uploads/2021/05/21-330x358.jpg",
+      "http://demo2.themelexus.com/gifymo/wp-content/uploads/2021/05/7-1-330x358.jpg",
+      "http://demo2.themelexus.com/gifymo/wp-content/uploads/2021/05/21-330x358.jpg",
+      "http://demo2.themelexus.com/gifymo/wp-content/uploads/2021/05/2-330x358.jpg"
+    ],
+    "star": 3.5,
+    "categoryId": 1,
+    "description": "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut. Eu agam malorum nec. Eu has vide putent, dico option nominati no eam. Ea erant impetus consequuntur eos, velit congue vidisse eos ne.",
+    "tags": [
+      "Classic",
+      "Foundation"
+    ]
+  }
+
+### 
+# @name addNewComment
+POST {{baseUrl}}/comments
+Content-Type: application/json
+
+{
+  "productId": 45,
+  "userName": "Thong Nguyen",
+  "content": "The team @gift-ribbon were prompt in responding, flexible with the size I was after, shipped the artwork immediately – but most importantly we loved the piece.",
+  "star": 4
+}
+
+###
+# @name addNewComment
+POST {{baseUrl}}/descriptions
+Content-Type: application/json
+
+{
+  "productId":45,
+  "content1":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  "productFeature":["Lorem ipsum dolor sit amet, consectetur adipisicing elit","Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."],
+  "content2":"Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+}
+
+
+### 
+# @name addBlogDetail
+POST {{baseUrl}}/blogDetails
+Content-Type: application/json
+
+ {
+  "title": "How To Get Away With Murder In The Workplace",
+  "img": "http://demo2.themelexus.com/gifymo/wp-content/uploads/2021/05/blog-4.jpg",
+  "creator": "Admin",
+  "update": "May 7, 2022",
+  "categories": "Uncategorized",
+  "quote": "That’s exactly what some of the small firms think when they want to advertise their product.",
+  "author": "Hannah Vaughn",
+  "content": [
+    "Many small businesses don't get success they want from advertising due to availability of very little resources. The results are simply flat due to lack of good ideas for improvements. Whether the ads are put in a local newspaper or are printed in the famous periodical or posted on a website, the money invested should gain the desired outcome. There are some common mistakes small businesses and professional service providers do when designing and posting the advertisement, which leads to the failure of the advertisement.",
+    "Creativity can provide all that which is required to make your advertising an attractive and effective one. Getting your product endorsed with an increase in its popularity figure has become quite easy these days with the availability of several advertising mediums in market. Among them advertising blimps and balloons can bring your brand interesting visual advertising without much cost. They are capable to grab maximum attention of the audience, especially if the blimp is visually crafted and appealing to look from a great distance.",
+    "The traditional concept of using advertising blimps for product promotion is still in use, as it can gather huge public support in places like grand openings, trade shows, dealer sales, fairs and festivals etc. Therefore Companies big or small increasingly prefer to spend on advertising blimps only to create brand awareness and develop new markets.",
+    "Blimpsforsale is a USA based company, manufacturing one of the largest selections of advertising balloons, advertising blimps, inflatables, helium balloons, helium blimps, cold-air balloons, parade balloons, blimps, balloons, custom aerial displays for sale, service and rental purpose. We offer helium advertising blimps in different size for every budget."
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "avt": "https://th.bing.com/th/id/OIP.aY_l9JnBoc3NGTYx1KRbtQHaHa?pid=ImgDet&w=736&h=736&rs=1",
+      "name": "A WordPress Commenter",
+      "update": "May 7, 2022 at 1:51 am",
+      "content": "Hi, this is a comment. To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard. Commenter avatars come from Gravatar."
+    },
+    {
+      "id": 2,
+      "avt": "https://phunugioi.com/wp-content/uploads/2020/10/anh-dai-dien-avt-anime-1-537x600.jpg",
+      "name": "Admin",
+      "update": "June 3, 2021 at 10:22 am",
+      "content": "Commenter avatars come from Gravatar."
+    },
+    {
+      "id": 3,
+      "avt": "https://i.pinimg.com/736x/3e/b3/cf/3eb3cf1d4ab4feb98bf9936a19cfa43a.jpg",
+      "name": "John Doe",
+      "update": "May 7, 2021 at 10:43 am",
+      "content": "Sed maximus imperdiet ipsum, id scelerisque nisi tincidunt vitae. In lobortis neque nec dolor vehicula, eget vulputate ligula lobortis."
+    },
+    {
+      "id": 4,
+      "avt": "https://i.pinimg.com/736x/82/ff/09/82ff09c03b47bd1f381a4348f05b69ba.jpg",
+      "name": "Mike Newton",
+      "update": "May 7, 2021 at 10:43 am",
+      "content": "Cras maximus ultricies volutpat. Praesent ut enim non enim vulputate fringilla."
+    },
+    {
+      "id": 5,
+      "avt": "https://i.pinimg.com/736x/10/07/77/100777d3948f7c47ef59df42f2e0256d.jpg",
+      "name": "John Snow",
+      "update": "May 7, 2021 at 10:43 am",
+      "content": "Cras maximus ultricies volutpat. Praesent ut enim non enim vulputate fringilla."
+    }
+  ]
+}
+
+### 
+# @name updated
+PATCH {{baseUrl}}/{{resourceName}}/BH9uNwo
+Content-Type: application/json
+
+{
+  "name": "Oriental Metal Tuna Update",
+  "color": "green",
+  "price": 888
+}
+
+
+### 
+# @name remove
+DELETE  {{baseUrl}}/{{resourceName}}/4
